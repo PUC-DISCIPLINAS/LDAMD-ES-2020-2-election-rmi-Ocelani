@@ -1,6 +1,8 @@
 # Java RMI - Election System
 Otávio Celani - 30 de Agosto de 2020
 
+[TOC]
+
 
 ## Exercicio
 Desenvolver um sistema para o serviço Election utilizando o Java RMI.
@@ -18,20 +20,20 @@ Desenvolver um sistema para o serviço Election utilizando o Java RMI.
 - [ ] **RNF.02** - Implementar um mecanismo de recuperação de falha no cliente que consiga obter uma semântica exactly-once para o caso do serviço ser interrompido por um tempo inferior a 30 segundos.
 
 
-## 2. Informações
+### 2. Informações
 
-### 2.1. Interface Election
+#### 2.1. Interface Election
 Fornece dois métodos remotos:
 
 
-#### - vote ( )
+##### - vote ( )
 Possui dois parâmetros fornecidos pelo cliente:
 -  <u>Nome de um Candidato</u> : *String*
 - <u>Identificador de Eleitor</u> : *MD5hash*
 Os **identificadores de eleitor** devem ser gerados a partir de uma **função MD5** do **nome completo do eleitor**.
 
 
-#### - result ( )
+##### - result ( )
 Possui dois parâmetros fornecidos pelo servidor para o cliente:
 - <u>Nome de um Candidato</u> : *String*
 - <u>Votos desse Candidato</u> : *Int*
