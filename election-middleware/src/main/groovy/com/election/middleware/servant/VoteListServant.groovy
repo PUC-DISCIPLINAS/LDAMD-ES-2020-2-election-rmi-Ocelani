@@ -1,4 +1,4 @@
-package com.election.middleware.servant.VoteListServant
+package com.election.middleware.servant.votelistservant
 
 import java.rmi.*
 import java.rmi.server.UnicastRemoteObject
@@ -10,29 +10,23 @@ import java.rmi.server.UnicastRemoteObject
  * @param String candidateId      the version of the candidate id.
  * @param Vector<Vote> voteList   the candidate vote list.
  */
-class VoteListServant extends UnicastRemoteObject implements Vote {
+public class VoteListServant extends UnicastRemoteObject implements Vote {
 
-	private Vector<Vote> voteList;
-	private int candidateId;
+  /* groovylint-disable-next-line PrivateFieldCouldBeFinal */
+  private Vector<Vote> voteList;
 
-	public VoteListServant() throws RemoteException {
-		voteList = new Vector<Vote>();
-		candidateId = 0;
-	}
+  public VoteListServant() throws RemoteException {
+    voteList = new Vector<Vote>()
+  }
 
-	public Vote newVote(GraphicalObject g) throws RemoteException {
-		candidateId++;
-		Vote s = new VoteServant(g, candidateId);
-		voteList.addElement(s);
-		return s;
-	}
+  public Vote newVote(Vote v) throws RemoteException {
+    Vote s = new VoteServant(getId, candidateId)
+    voteList.addElement(s)
+    return s
+  }
 
-	public Vector<Vote> allVotes() throws RemoteException {
-		return voteList;
-	}
-
-	public int getCandidateIdVersion() throws RemoteException {
-		return candidateId;
-	}
+  public Vector<Vote> allVotes() throws RemoteException {
+    return voteList
+  }
 
 }
