@@ -13,31 +13,21 @@ import java.rmi.server.UnicastRemoteObject
 @SuppressWarnings('serial')
 public class VoteServant extends UnicastRemoteObject implements Vote {
 
-  private String id;
-  private String candidateName;
+  String id;
+  int candidateId;
 
-  // TODO: implement MD5 method.
-  // ! **RF.03** - The **electorId** must be a **MD5 hash** provided by **electorName**.
-  public String setId(String id) throws RemoteException {
-    this.id = electorName
-    return this.id
-  }
+  public VoteServant(String id, String candidateName) throws RemoteException {
+		theId = id;
+		myCandidate = candidateName;
+	}
 
   public String getId() throws RemoteException {
-    return this.id
+    return theId
   }
 
-  public String setCandidateName(String candidateName) throws RemoteException {
-    this.candidateName = candidateName
-    return this
+  public int getCandidateName() throws RemoteException {
+    return myCandidate
   }
 
-  public String getCandidateName() throws RemoteException {
-    return this.candidateName
-  }
-
-  public String toString() {
-    return "ID: '" + this.id + "', vote: '" + this.vote + "'"
-  }
 
 }

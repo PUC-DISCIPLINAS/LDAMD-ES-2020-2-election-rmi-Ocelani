@@ -7,7 +7,19 @@
         "ImplementationAsType": {
             "enabled": false
         },
+        "NoWildcardImports": {
+            "enabled": false
+        },
+        "UnnecessaryDotClass": {
+            "enabled": false
+        },
         "UnnecessaryGetter": {
+            "enabled": false
+        },
+        "UnnecessaryPublicModifier": {
+            "enabled": false
+        },
+        "UnnecessarySetter": {
             "enabled": false
         },
         "VectorIsObsolete": {
