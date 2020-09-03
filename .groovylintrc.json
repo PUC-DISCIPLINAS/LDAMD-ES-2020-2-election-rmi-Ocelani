@@ -4,7 +4,13 @@
         "CompileStatic": {
             "enabled": false
         },
+        "ImplementationAsType": {
+            "enabled": false
+        },
         "UnnecessaryGetter": {
+            "enabled": false
+        },
+        "VectorIsObsolete": {
             "enabled": false
         }
     }
