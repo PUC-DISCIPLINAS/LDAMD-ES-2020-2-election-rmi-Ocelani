@@ -7,11 +7,11 @@ import java.rmi.registry.LocateRegistry
 import java.rmi.registry.Registry
 import java.rmi.server.UnicastRemoteObject
 
-/**
+/*
  * Runs the server application.
  *
- * @param String[] args   the command arguments.
- * @catch RemoteException if 'args' contains no context element.
+ * @param String[] args     the command arguments.
+ * @catch RemoteException   if 'args' contains no context element.
  */
 @SpringBootApplication
 class ElectionServer {
@@ -20,7 +20,7 @@ class ElectionServer {
     SpringApplication.run(ElectionServer, args)
 
     try {
-      // Export the object.
+      // Export the object stub.
       PrintingInterface stub = (PrintingInterface) UnicastRemoteObject.exportObject(implementation, 0)
       Registry registry = LocateRegistry.getRegistry()
       // Set the string to use in order to lookup the remote class.
